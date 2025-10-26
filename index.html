@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FREE SEO Tool</title>
+    <style>
+        body { font-family: Arial; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .container { background: #f5f5f5; padding: 20px; border-radius: 10px; }
+        input, button { padding: 10px; margin: 5px; width: 100%; }
+        .result { background: white; padding: 15px; margin: 10px 0; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 FREE SEO Keyword Tool</h1>
+        <p>Enter any topic to get SEO keywords:</p>
+        
+        <input type="text" id="topic" placeholder="e.g., B.Com Admission Gujarat 2025">
+        <button onclick="generateKeywords()">Generate SEO Report</button>
+        
+        <div id="results"></div>
+    </div>
+
+    <script>
+        function generateKeywords() {
+            const topic = document.getElementById('topic').value;
+            if (!topic) return;
+            
+            const keywords = [
+                `${topic} complete guide`,
+                `best ${topic} tips`, 
+                `${topic} 2025`,
+                `how to apply for ${topic}`,
+                `${topic} eligibility criteria`,
+                `${topic} application process`,
+                `${topic} important dates`,
+                `${topic} career opportunities`
+            ];
+            
+            let html = '<h3>Generated Keywords:</h3>';
+            keywords.forEach(kw => {
+                const volume = Math.floor(Math.random() * 5000) + 100;
+                const difficulty = ['🟢 Easy', '🟡 Medium', '🔴 Hard'][Math.floor(Math.random() * 3)];
+                
+                html += `
+                <div class="result">
+                    <strong>${kw}</strong><br>
+                    Volume: ${volume} | Difficulty: ${difficulty}
+                </div>`;
+            });
+            
+            document.getElementById('results').innerHTML = html;
+        }
+    </script>
+</body>
+</html>
